@@ -24,6 +24,7 @@ const wordReplace = string => {
 
 const punctReplace = string => {
   return string.replace(/, and(?![^,]*^)/g, ' and')
+               .replace(/, or(?![^,]*^)/g, ' or')
                .replace(/\*\*/g, `"`)
                .replace(/!/g, '.');
               // .replace(/, and/, ' and')
@@ -37,18 +38,53 @@ const fullEdit = string => {
   return string;
 }
 
+const count = value => {
+
+  let counterMax = textInput.getAttribute('maxlength');
+  let currentCount = textInput.value.length;
+
+  if (textInput.value.length > counterMax - 1){
+    counter.style.color = "#f15b60";
+  }
+  else {
+    counter.style.color = "white";
+  }
+
+  return counter.innerHTML = textInput.value.length+'/'+counterMax;
+
+}
+
+const counter = document.querySelector('#counter');
 const textInput = document.querySelector('#text-input');
 const textOutput = document.querySelector('#text-output');
-textInput.addEventListener('keyup', () => {
+
+counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
+
+textInput.addEventListener('keyup', (event) => {
+  
   textOutput.innerHTML = betterSentences(textInput.value);
+  count(textInput.value);
+
 });
 
-textInput.addEventListener('focus', () => {
+textInput.addEventListener('focusin', () => {
   textInput.style.color = "black";
   if(textInput.value === "Try using verbs like utilize and optimize or even inserting the dreaded oxford comma.") {
     textInput.value= "";
   }
 });
+
+textInput.addEventListener('focusout', () => {
+  if(textInput.value === "") {
+    textInput.style.color = "gray";
+    textInput.value = "Try using verbs like utilize and optimize or even inserting the dreaded oxford comma.";
+    counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
+    counter.style.color = "white";
+    textOutput.innerHTML = "";
+  }
+});
+
+
 
 
 //let sentence = "Hello! I **just** wanted Leverage and Circle back and let you know that I will utilize, optimize, and leverage my Rocket Referrals account. Hello, I **just**wanted leverage and Circle back and let you know that I will utilize, optimize, and leverage my Rocket Referrals account."

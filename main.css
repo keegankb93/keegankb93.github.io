@@ -10,8 +10,14 @@ body {
 
 textarea {
   display:block;
+  width: 100%;
+  resize: none;
+  outline: none;
+  border-radius: 25px;
+  padding: 1rem;
   margin: auto;
-  border: 2px dashed gray;
+  border: 2px dashed #177bc0;
+  color: gray;
 }
 
 .main-container {
@@ -69,8 +75,9 @@ textarea {
 }
 
 .output {
-  margin: 2rem 0;
+  margin: 2rem 0 10rem 0;
   font-family: monospace;
+  font-size: 1.5rem;
   width: 100%;
-  border: 1px solid black;
+  height: 12rem;
 }

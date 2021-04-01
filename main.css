@@ -4,6 +4,8 @@
 
 body {
   margin: 0;
+  background-color: #177bc0;
+  color: white;
 }
 
 textarea {

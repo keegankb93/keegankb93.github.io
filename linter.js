@@ -62,18 +62,21 @@ const initiateInput = () => {
   //initializes output and counter selector
   const textOutput = document.querySelector('#text-output');
   const counter = document.querySelector('#counter');
-  let placeholder = document.querySelectorAll("textarea[data-placeholder]");
+  let placeholder = document.querySelectorAll("#text-input[data-placeholder]");
 
-  //sets counter to 0/max
 
-  //adds listener to input and counts # of characters
-  textInput.addEventListener('input', () => {
-    count(textInput.value);
-  });
+  if(textInput.value === placeholder) {
+    textInput.value= "";
+  }
 
   //processes input on key release and performs replacements and edits via betterSentences function
   textInput.addEventListener('keyup', (event) => {
     textOutput.innerHTML = betterSentences(textInput.value);
+  });
+
+  //adds listener to input and counts # of characters
+  textInput.addEventListener('input', () => {
+    count(textInput.value);
   });
 
   //adds listenter to reset textarea when unfocused and textarea is blank and resets counter to 0
@@ -95,9 +98,6 @@ const textInput = document.querySelector('#text-input');
 textInput.addEventListener('focusin', () => {
   initiateInput()
   textInput.style.color = "black";
-  if(textInput.value === "Try using verbs like utilize and optimize or even inserting the dreaded oxford comma.") {
-    textInput.value= "";
-  }
 
 
 });

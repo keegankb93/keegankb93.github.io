@@ -72,7 +72,6 @@ const initiate = () => {
       textInput.style.color = "gray";
       textInput.value = "Try using verbs like utilize and optimize or even inserting the dreaded oxford comma.";
       counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
-      counter.style.color = "white";
       textOutput.innerHTML = "";
     }
   });

@@ -52,28 +52,20 @@ const count = value => {
 
 }
 
-const counter = document.querySelector('#counter');
-const textInput = document.querySelector('#text-input');
-const textOutput = document.querySelector('#text-output');
+const initiate = () => {
 
-counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
+  const textOutput = document.querySelector('#text-output');
 
-textInput.addEventListener('keyup', (event) => {
+  textInput.addEventListener('input', () => {
+    count(textInput.value);
+  });
 
-  textOutput.innerHTML = betterSentences(textInput.value);
-  //count(textInput.value);
+  textInput.addEventListener('keyup', (event) => {
 
-});
+    textOutput.innerHTML = betterSentences(textInput.value);
+    //count(textInput.value);
 
-textInput.addEventListener('input', () => {
-  count(textInput.value);
-});
-
-textInput.addEventListener('focusin', () => {
-  textInput.style.color = "black";
-  if(textInput.value === "Try using verbs like utilize and optimize or even inserting the dreaded oxford comma.") {
-    textInput.value= "";
-  }
+  });
 
   textInput.addEventListener('focusout', () => {
     if(textInput.value === "") {
@@ -84,6 +76,27 @@ textInput.addEventListener('focusin', () => {
       textOutput.innerHTML = "";
     }
   });
+
+
+
+}
+
+const textInput = document.querySelector('#text-input');
+const counter = document.querySelector('#counter');
+counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
+
+
+
+
+
+textInput.addEventListener('focusin', () => {
+  iniate()
+  textInput.style.color = "black";
+  if(textInput.value === "Try using verbs like utilize and optimize or even inserting the dreaded oxford comma.") {
+    textInput.value= "";
+  }
+
+
 });
 
 /*textInput.addEventListener('focusout', () => {

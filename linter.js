@@ -69,7 +69,7 @@ textInput.addEventListener('keyup', (event) => {
 
 textInput.addEventListener('input', () => {
   count(textInput.value);
-}
+});
 
 textInput.addEventListener('focusin', () => {
   textInput.style.color = "black";

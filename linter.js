@@ -42,7 +42,7 @@ const count = value => {
   let counterMax = textInput.getAttribute('maxlength');
   let currentCount = textInput.value.length;
 
-  if (value === ""){
+  if (value === placeholder){
     return counterZero;
   }
 
@@ -61,6 +61,7 @@ const initiateInput = () => {
   //initializes output and counter selector
   const textOutput = document.querySelector('#text-output');
   const counter = document.querySelector('#counter');
+  let placeholder = document.querySelectorAll("textarea[data-placeholder]");
 
   //sets counter to 0/max
 
@@ -78,7 +79,7 @@ const initiateInput = () => {
   textInput.addEventListener('focusout', () => {
     if(textInput.value === "") {
       textInput.style.color = "gray";
-      textInput.value = "Try using verbs like utilize and optimize or even inserting the dreaded oxford comma.";
+      textInput.value = placeholder;
       counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
       textOutput.innerHTML = "";
     }

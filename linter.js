@@ -43,8 +43,13 @@ const count = value => {
   let currentCount = textInput.value.length;
   let counterReset = "";
 
-  if (value === placeholder){
+  if (value === placeholder) {
+
     return counterZero;
+  }
+
+  if (currentCount === 0) {
+    textOutput.innerHTML = "";
   }
 
   if (value > counterMax - 1){
@@ -60,10 +65,7 @@ const count = value => {
 
 const initiateInput = () => {
   //initializes output and counter selector
-  const textOutput = document.querySelector('#text-output');
   const counter = document.querySelector('#counter');
-  let placeholder = document.querySelectorAll("#text-input[data-placeholder]");
-
 
   if(textInput.value === placeholder) {
     textInput.value= "";
@@ -94,12 +96,13 @@ const initiateInput = () => {
 }
 
 const textInput = document.querySelector('#text-input');
+const textOutput = document.querySelector('#text-output');
+let placeholder = textInput.querySelectorAll('data-placeholder');
+textInput.innerHTML = placeholder;
 
 textInput.addEventListener('focusin', () => {
   initiateInput()
   textInput.style.color = "black";
-
-
 });
 
 /*textInput.addEventListener('focusout', () => {

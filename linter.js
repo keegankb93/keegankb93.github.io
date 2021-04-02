@@ -47,7 +47,7 @@ const count = value => {
     counter.style.color = "#f15b60";
   }
   else {
-    counter.style.color = "white";
+    counter.style.color = "#177bc0";
   }
 
   return counter.innerHTML = textInput.value.length+'/'+counterMax;

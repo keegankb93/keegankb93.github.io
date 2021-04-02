@@ -16,7 +16,7 @@ words with obscenely long character lengths (impossible words) create unlimited 
 - Clear output when counter = 0
 - create basic instructions or info div to explain usage and purpose. Most likely a toggable overlay.
 - More filters on business jargon/replacement words
-- Grammatical corrections such as capitalize first word of a sentence and a -> an when preceding a noun
+- Grammatical corrections such as capitalize first word of a sentence and a -> an when preceding a vowel
 - Create function to remove excessive words such as 'very'
 - Toggle button preferences to determine which functions the user would like to perform on their input
 - Suggestions/links to articles for suitable replacement words based on the inputs

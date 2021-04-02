@@ -12,12 +12,11 @@ const betterSentences = string => {
 
 const wordReplace = string => {
    return string.replace(/\butilize/ig, 'use')
-                .replace(/utilizing/ig, 'using')
-                .replace(/optimize/ig, 'improve')
-                .replace(/optimizing/ig, 'improving')
-                .replace(/circle back/ig, 'follow up')
-                .replace(/leverage/ig, 'take the opportunity')
-                .replace(/pivot/ig, 'change direction');
+                .replace(/\butilizing/ig, 'using')
+                .replace(/\boptimize/ig, 'improve')
+                .replace(/\boptimizing/ig, 'improving')
+                .replace(/\bleverage/ig, 'take the opportunity')
+                .replace(/\bpivot/ig, 'change direction');
 
 
 }
@@ -25,7 +24,6 @@ const wordReplace = string => {
 const punctReplace = string => {
   return string.replace(/, and(?![^,]*^)/g, ' and')
                .replace(/, or(?![^,]*^)/g, ' or')
-               .replace(/\*\*/g, `"`)
                .replace(/!/g, '.');
               // .replace(/, and/, ' and')
 

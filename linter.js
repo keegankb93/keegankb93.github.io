@@ -61,7 +61,7 @@ const textOutput = document.querySelector('#text-output');
 counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
 
 textInput.addEventListener('keyup', (event) => {
-  
+
   textOutput.innerHTML = betterSentences(textInput.value);
   count(textInput.value);
 
@@ -72,9 +72,19 @@ textInput.addEventListener('focusin', () => {
   if(textInput.value === "Try using verbs like utilize and optimize or even inserting the dreaded oxford comma.") {
     textInput.value= "";
   }
+
+  textInput.addEventListener('focusout', () => {
+    if(textInput.value === "") {
+      textInput.style.color = "gray";
+      textInput.value = "Try using verbs like utilize and optimize or even inserting the dreaded oxford comma.";
+      counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
+      counter.style.color = "white";
+      textOutput.innerHTML = "";
+    }
+  });
 });
 
-textInput.addEventListener('focusout', () => {
+/*textInput.addEventListener('focusout', () => {
   if(textInput.value === "") {
     textInput.style.color = "gray";
     textInput.value = "Try using verbs like utilize and optimize or even inserting the dreaded oxford comma.";
@@ -82,7 +92,7 @@ textInput.addEventListener('focusout', () => {
     counter.style.color = "white";
     textOutput.innerHTML = "";
   }
-});
+});*/
 
 
 

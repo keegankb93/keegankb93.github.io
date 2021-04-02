@@ -80,7 +80,7 @@ const initiateInput = () => {
     if(textInput.value === "") {
       textInput.style.color = "gray";
       textInput.value = placeholder;
-      counter.innerHTML = 0+'/'+textInput.getAttribute('maxlength');
+      counter.innerHTML = "";
     }
   });
 

@@ -52,21 +52,25 @@ const count = value => {
 
 }
 
-const initiate = () => {
-
+const initiateInput = () => {
+  //initializes output and counter selector
   const textOutput = document.querySelector('#text-output');
+  const counter = document.querySelector('#counter');
 
+  //sets counter to 0/max
+  counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
+
+  //adds listener to input and counts # of characters
   textInput.addEventListener('input', () => {
     count(textInput.value);
   });
 
+  //processes input on key release and performs replacements and edits via betterSentences function
   textInput.addEventListener('keyup', (event) => {
-
     textOutput.innerHTML = betterSentences(textInput.value);
-    //count(textInput.value);
-
   });
 
+  //adds listenter to reset textarea when unfocused and textarea is blank and resets counter to 0
   textInput.addEventListener('focusout', () => {
     if(textInput.value === "") {
       textInput.style.color = "gray";
@@ -81,15 +85,9 @@ const initiate = () => {
 }
 
 const textInput = document.querySelector('#text-input');
-const counter = document.querySelector('#counter');
-counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
-
-
-
-
 
 textInput.addEventListener('focusin', () => {
-  iniate()
+  initiateInput()
   textInput.style.color = "black";
   if(textInput.value === "Try using verbs like utilize and optimize or even inserting the dreaded oxford comma.") {
     textInput.value= "";

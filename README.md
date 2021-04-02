@@ -3,6 +3,11 @@
 ## Bug list
 
 ### textInput.FocusOut
+--FIXED--
+
+Had nothing to do with the input conversion. Simply had an old line of Javascript that was still in the focusout event that turned the text white.
+
+---------
 
 Removes counter. This started happening when the counter was converted
 to an input event rather than keyup (which was implemented to fix input counter not resetting to 0 when textarea empty). Counter reappears when input begins. I need to refactor the focus events overall.

@@ -97,7 +97,7 @@ const initiateInput = () => {
 
 const textInput = document.querySelector('#text-input');
 const textOutput = document.querySelector('#text-output');
-let placeholder = textInput.querySelectorAll('data-placeholder');
+let placeholder = textInput.getAttribute('data-placeholder');
 textInput.innerHTML = placeholder;
 
 textInput.addEventListener('focusin', () => {

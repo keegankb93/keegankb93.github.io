@@ -67,7 +67,7 @@ textInput.addEventListener('keyup', (event) => {
 
 });
 
-textInput.addEventListener('input', ()){
+textInput.addEventListener('input', () => {
   count(textInput.value);
 }
 

@@ -25,6 +25,7 @@ textarea {
   width: 780px;
   margin: 0 auto;
   padding: 1.5rem;
+  border-radius: 25px;
   background-color: white;
   /*border: 1px solid black;*/
 }
@@ -108,4 +109,5 @@ textarea {
   margin: .25rem;
   font-family: monospace;
   font-size: 1.5rem;
+  font-weight: 600;
 }

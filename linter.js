@@ -41,6 +41,7 @@ const count = value => {
   let counterZero = counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
   let counterMax = textInput.getAttribute('maxlength');
   let currentCount = textInput.value.length;
+  let counterReset = "";
 
   if (value === ""){
     return counterZero;
@@ -79,7 +80,8 @@ const initiateInput = () => {
     if(textInput.value === "") {
       textInput.style.color = "gray";
       textInput.value = "Try using verbs like utilize and optimize or even inserting the dreaded oxford comma.";
-      counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
+      counter.innerHTML = counterReset;
+      //counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
       textOutput.innerHTML = "";
     }
   });

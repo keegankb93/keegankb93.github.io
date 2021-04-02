@@ -63,9 +63,13 @@ counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
 textInput.addEventListener('keyup', (event) => {
 
   textOutput.innerHTML = betterSentences(textInput.value);
-  count(textInput.value);
+  //count(textInput.value);
 
 });
+
+textInput.addEventListener('input', ()){
+  count(textInput.value);
+}
 
 textInput.addEventListener('focusin', () => {
   textInput.style.color = "black";

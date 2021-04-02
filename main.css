@@ -27,6 +27,7 @@ textarea {
   padding: 1.5rem;
   border-radius: 25px;
   background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
   /*border: 1px solid black;*/
 }
 
@@ -72,7 +73,6 @@ textarea {
   font-family: monospace;
   font-size: 2rem;
   /*border-bottom: 1px solid #177bc0;*/
-  /*box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;*/
 }
 
 .header h1 {

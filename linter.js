@@ -41,12 +41,6 @@ const count = value => {
   let counterZero = counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
   let counterMax = textInput.getAttribute('maxlength');
   let currentCount = textInput.value.length;
-  let counterReset = "";
-
-  if (value === placeholder) {
-
-    return counterZero;
-  }
 
   if (currentCount === 0) {
     textOutput.innerHTML = "";

@@ -46,14 +46,14 @@ const count = value => {
     textOutput.innerHTML = "";
   }
 
-  if (value > counterMax - 1){
+  if (value.length > counterMax - 1){
     counter.style.color = "#f15b60";
   }
   else {
     counter.style.color = "#177bc0";
   }
 
-  return counter.innerHTML = value+'/'+counterMax;
+  return counter.innerHTML = value.length+'/'+counterMax;
 
 }
 

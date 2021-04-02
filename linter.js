@@ -38,17 +38,22 @@ const fullEdit = string => {
 
 const count = value => {
 
+  let counterZero = counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
   let counterMax = textInput.getAttribute('maxlength');
   let currentCount = textInput.value.length;
 
-  if (textInput.value.length > counterMax - 1){
+  if (value === ""){
+    return counterZero;
+  }
+
+  if (value > counterMax - 1){
     counter.style.color = "#f15b60";
   }
   else {
     counter.style.color = "#177bc0";
   }
 
-  return counter.innerHTML = textInput.value.length+'/'+counterMax;
+  return counter.innerHTML = value+'/'+counterMax;
 
 }
 
@@ -58,7 +63,6 @@ const initiateInput = () => {
   const counter = document.querySelector('#counter');
 
   //sets counter to 0/max
-  counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
 
   //adds listener to input and counts # of characters
   textInput.addEventListener('input', () => {

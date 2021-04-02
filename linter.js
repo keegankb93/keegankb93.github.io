@@ -11,7 +11,7 @@ const betterSentences = string => {
 
 
 const wordReplace = string => {
-   return string.replace(/utilize/ig, 'use')
+   return string.replace(/\butilize/big, 'use')
                 .replace(/utilizing/ig, 'using')
                 .replace(/optimize/ig, 'improve')
                 .replace(/optimizing/ig, 'improving')

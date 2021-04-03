@@ -45,6 +45,14 @@ textarea {
   align-items: center;
 }
 
+.col-75 {
+  flex-basis: 75%;
+}
+
+.col-125 {
+  flex-basis: 12.5%;
+}
+
 .justify-center {
   display: flex;
   justify-content: center;

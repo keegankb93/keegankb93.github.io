@@ -75,10 +75,16 @@ textarea {
   flex-direction: column;
 }
 
-.row {
+.rowwrap {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.rownowrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .column {

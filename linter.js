@@ -2,9 +2,14 @@ const betterSentences = string => {
 
   let splitSentence = string.match(/([^\.!\?]+[\.!\?]+)|([^\.!\?]+$)/g);
 
+  if (splitSentence === null){
+    return "";
+  }
+  else {
   splitSentence.forEach((sentence,i) => {
     splitSentence[i] = fullEdit(sentence)
   });
+  }
 
   return splitSentence.join('');
 }

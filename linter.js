@@ -38,9 +38,11 @@ const fullEdit = string => {
 
 const count = value => {
 
-  let counterZero = counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
+  //let counterZero = counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
   let counterMax = textInput.getAttribute('maxlength');
   let currentCount = textInput.value.length;
+
+  counter.style.display = "block";
 
   if (currentCount === 0) {
     textOutput.innerHTML = "";
@@ -80,7 +82,8 @@ const initiateInput = () => {
     if(textInput.value === "") {
       textInput.style.color = "gray";
       textInput.value = placeholder;
-      counter.innerHTML = "";
+      counter.style.visibility = "hidden";
+      //counter.innerHTML = "";
     }
   });
 

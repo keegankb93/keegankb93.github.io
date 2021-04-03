@@ -82,7 +82,7 @@ const initiateInput = () => {
     if(textInput.value === "") {
       textInput.style.color = "gray";
       textInput.value = placeholder;
-      counter.style.visibility = "hidden";
+      //counter.style.visibility = "hidden";
       //counter.innerHTML = "";
     }
   });

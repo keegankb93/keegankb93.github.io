@@ -68,7 +68,6 @@ textarea {
 }
 
 .justify-center {
-  display: flex;
   justify-content: center;
 }
 

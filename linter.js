@@ -8,7 +8,7 @@ const betterSentences = string => {
     return "";
   }
 
-  for (let [i, word] of splitSentence.entries()) {
+  /*for (let [i, word] of splitSentence.entries()) {
     if (checkboxes[0].checked) {
       splitSentence[i] = wordReplace(word);
     }
@@ -16,8 +16,8 @@ const betterSentences = string => {
     if (checkboxes[1].checked) {
       splitSentences[i] = punctReplace(word);
     }
-  }
-  /*splitSentence.forEach((sentence, i) => {
+  }*/
+  splitSentence.forEach((sentence, i) => {
     if (checkboxes[0].checked) {
       splitSentence[i] = wordReplace(sentence);
     }
@@ -28,7 +28,7 @@ const betterSentences = string => {
     if (checkboxes[1].checked) {
       splitSentence[i] = punctReplace(sentence);
     }
-  });*/
+  });
 
   /*else {
   splitSentence.forEach((sentence,i) => {

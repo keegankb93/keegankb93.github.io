@@ -4,6 +4,7 @@ const betterSentences = string => {
 
   let splitSentence = string.match(/([^\.!\?]+[\.!\?]+)|([^\.!\?]+$)/g);
 
+
   if (splitSentence === null){
     return "";
   }

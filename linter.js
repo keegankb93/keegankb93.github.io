@@ -8,29 +8,27 @@ const betterSentences = string => {
     return "";
   }
 
-  for (let word in splitSentence) {
+  for (let word of splitSentence) {
     if (checkboxes[0].checked) {
-      splitSentence[i] = wordReplace(sentence);
+      word = wordReplace(sentence);
+    }
 
-      if (checkboxes[1].checked) {
-        splitSetence[i] = punctReplace(sentence);
-      }
-
+    if (checkboxes[1].checked) {
+      word = punctReplace(sentence);
     }
   }
-
-
   /*splitSentence.forEach((sentence, i) => {
     if (checkboxes[0].checked) {
       splitSentence[i] = wordReplace(sentence);
-
-      if (checkboxes[1].checked) {
-        splitSetence[i] = punctReplace(sentence);
-      }
     }
 
-  })*/
+  });
 
+  splitSentence.forEach((sentence, i) => {
+    if (checkboxes[1].checked) {
+      splitSentence[i] = punctReplace(sentence);
+    }
+  });*/
 
   /*else {
   splitSentence.forEach((sentence,i) => {

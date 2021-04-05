@@ -8,13 +8,13 @@ const betterSentences = string => {
     return "";
   }
 
-  for (let word of splitSentence) {
+  for (let [i, word] of splitSentence.entries()) {
     if (checkboxes[0].checked) {
-      word = wordReplace(word);
+      splitSentence[i] = wordReplace(word);
     }
 
     if (checkboxes[1].checked) {
-      word = punctReplace(word);
+      splitSentences[i] = punctReplace(word);
     }
   }
   /*splitSentence.forEach((sentence, i) => {

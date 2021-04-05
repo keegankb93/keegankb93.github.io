@@ -1,15 +1,30 @@
 const betterSentences = string => {
 
+  const checkboxes = document.querySelectorAll("input[type='checkbox']")
+
   let splitSentence = string.match(/([^\.!\?]+[\.!\?]+)|([^\.!\?]+$)/g);
 
   if (splitSentence === null){
     return "";
   }
-  else {
+
+  splitSentence.forEach((sentence, i) => {
+    if (checkboxes[0].checked) {
+      splitSentence[i] = wordReplace(sentence);
+    }
+
+    if (checkboxes[1].checked) {
+      splitSetence[i] = punctReplace(sentence);
+    }
+
+  })
+
+
+  /*else {
   splitSentence.forEach((sentence,i) => {
     splitSentence[i] = fullEdit(sentence)
   });
-  }
+}*/
 
   return splitSentence.join('');
 }

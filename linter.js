@@ -11,10 +11,10 @@ const betterSentences = string => {
   splitSentence.forEach((sentence, i) => {
     if (checkboxes[0].checked) {
       splitSentence[i] = wordReplace(sentence);
-    }
 
-    if (checkboxes[1].checked) {
-      splitSetence[i] = punctReplace(sentence);
+      if (checkboxes[1].checked) {
+        splitSetence[i] = punctReplace(sentence);
+      }
     }
 
   })

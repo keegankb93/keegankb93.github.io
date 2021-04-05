@@ -152,6 +152,7 @@ textarea {
 .switch {
   position: relative;
   display: inline-block;
+  margin-bottom: 2rem;
 }
 .switch-input {
   display: none;
@@ -160,7 +161,6 @@ textarea {
   display: block;
   width: 48px;
   height: 24px;
-  margin-bottom: 1.5rem;
   text-indent: -150%;
   clip: rect(0 0 0 0);
   color: transparent;

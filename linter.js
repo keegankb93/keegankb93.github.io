@@ -16,6 +16,7 @@ const betterSentences = string => {
         splitSetence[i] = punctReplace(sentence);
       }
 
+    }
   }
 
 

@@ -11,14 +11,14 @@ const betterSentences = string => {
   if (checkboxes[0].checked) {
     splitSentence.forEach((sentence, i) => {
         splitSentence[i] = wordReplace(sentence);
-      }
-    });
+      });
+    }
 
   if (checkboxes[1].checked) {
     splitSentence.forEach((sentence, i) => {
         splitSentence[i] = punctReplace(sentence);
-      }
-    });
+      });
+    }
 
   return splitSentence.join('');
 }

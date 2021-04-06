@@ -112,8 +112,8 @@ const fullEdit = string => {
 const count = value => {
 
 
-  let counterMax = textInput.getAttribute('maxlength');
-  let currentCount = textInput.value.length;
+  let counterMax = document.querySelector('#text-input').getAttribute('maxlength');
+  let currentCount = value.length;
 
   //counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
   if (currentCount === counterMax){
@@ -123,7 +123,7 @@ const count = value => {
     counter.style.color = "#177bc0";
   }
 
-  return counter.innerHTML = value.length+'/'+counterMax;
+  return counter.innerHTML = currentCount+'/'+counterMax;
 
 }
 

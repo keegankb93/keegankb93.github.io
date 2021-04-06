@@ -9,15 +9,16 @@ const initiateInput = () => {
 
   textInput.addEventListener('focusin', () => {
     textInput.style.color = "black";
+    counter.style.visibility = "visible";
 
     if(textInput.value === placeholder) {
       textInput.value= "";
     }
 
-    //textInput.addEventListener('input', () => {
-      count(textInput.value);
-    //});
+  });
 
+  textInput.addEventListener('input', () => {
+    count(textInput.value);
   });
 
   //const submitInput = document.querySelector('#submit-button');
@@ -113,8 +114,6 @@ const count = value => {
   let currentCount = textInput.value.length;
 
   //counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
-  counter.style.visibility = "visible";
-
   if (currentCount === counterMax){
     counter.style.color = "#f15b60";
   }

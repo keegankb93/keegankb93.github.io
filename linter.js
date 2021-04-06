@@ -78,15 +78,20 @@ const count = value => {
 const initiateInput = () => {
   //initializes output and counter selector
   const counter = document.querySelector('#counter');
+  const submitInput = document.querySelector('#submit-button');
 
   if(textInput.value === placeholder) {
     textInput.value= "";
   }
 
-  //processes input on key release and performs replacements and edits via betterSentences function
-  textInput.addEventListener('keyup', (event) => {
+  submitInput.addEventListener('click', () => {
     textOutput.innerHTML = betterSentences(textInput.value);
   });
+
+  //processes input on key release and performs replacements and edits via betterSentences function
+  /*textInput.addEventListener('keyup', (event) => {
+    textOutput.innerHTML = betterSentences(textInput.value);
+  });*/
 
   //adds listener to input and counts # of characters
   textInput.addEventListener('input', () => {

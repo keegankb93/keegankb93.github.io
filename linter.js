@@ -17,9 +17,11 @@ const initiateInput = () => {
 
   });
 
-  textInput.addEventListener('input', () => {
-    count(textInput.value);
-  });
+  count(textInput.value);
+
+
+  //textInput.addEventListener('input', () => {
+  //});
 
   //const submitInput = document.querySelector('#submit-button');
 

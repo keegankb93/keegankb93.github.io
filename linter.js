@@ -9,13 +9,22 @@ const initiateInput = () => {
 
   textInput.addEventListener('focusin', () => {
     textInput.style.color = "black";
+
+    if(textInput.value === placeholder) {
+      textInput.value= "";
+    }
+
+    textInput.addEventListener('input', () => {
+      count(textInput.value);
+    });
+
   });
 
   //const submitInput = document.querySelector('#submit-button');
 
-  if(textInput.value === placeholder) {
+  /*if(textInput.value === placeholder) {
     textInput.value= "";
-  }
+  }*/
 
   submitInput.addEventListener('click', () => {
     textOutput.innerHTML = betterSentences(textInput.value);
@@ -27,9 +36,9 @@ const initiateInput = () => {
   });*/
 
   //adds listener to input and counts # of characters
-  textInput.addEventListener('input', () => {
+  /*textInput.addEventListener('input', () => {
     count(textInput.value);
-  });
+  });*/
 
   //adds listenter to reset textarea when unfocused and textarea is blank and resets counter to 0
   textInput.addEventListener('focusout', () => {

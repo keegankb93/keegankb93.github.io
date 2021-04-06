@@ -147,6 +147,13 @@ textarea {
   font-weight: 500;
 }
 
+.submit-error-message {
+  visibility: hidden;
+  color: #f15b60;
+  font-family: monospace;
+  margin-bottom: .5rem;
+}
+
 #submit-button {
  width: 5rem;
  height: 2.5rem;

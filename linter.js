@@ -23,8 +23,10 @@ const initiate = () => {
 
 
   submitInput.addEventListener('click', () => {
+    let errorMessage = document.querySelector('.submit-error-message');
+
     if (textInput.value === placeholder){
-      return alert('Please type something first!')
+      errorMessage.innerHTML = "Please type something first!"
     }
     else {
       textOutput.innerHTML = betterSentences(textInput.value);

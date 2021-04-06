@@ -57,7 +57,7 @@ const count = value => {
   let counterMax = textInput.getAttribute('maxlength');
   let currentCount = textInput.value.length;
 
-  counter.style.visibility: "visible";
+  counter.style.visibility = "visible";
 
   if (currentCount === 0) {
     textOutput.innerHTML = "";

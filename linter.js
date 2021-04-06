@@ -1,3 +1,48 @@
+const initiateInput = () => {
+  //initializes output and counter selector
+  const textInput = document.querySelector('#text-input');
+  const textOutput = document.querySelector('#text-output');
+  const submitInput = document.querySelector('#submit-button');
+  const counter = document.querySelector('#counter');
+  let placeholder = textInput.getAttribute('data-placeholder');
+  textInput.innerHTML = placeholder;
+
+  textInput.addEventListener('focusin', () => {
+    textInput.style.color = "black";
+  });
+
+  //const submitInput = document.querySelector('#submit-button');
+
+  if(textInput.value === placeholder) {
+    textInput.value= "";
+  }
+
+  submitInput.addEventListener('click', () => {
+    textOutput.innerHTML = betterSentences(textInput.value);
+  });
+
+  //processes input on key release and performs replacements and edits via betterSentences function
+  /*textInput.addEventListener('keyup', (event) => {
+    textOutput.innerHTML = betterSentences(textInput.value);
+  });*/
+
+  //adds listener to input and counts # of characters
+  textInput.addEventListener('input', () => {
+    count(textInput.value);
+  });
+
+  //adds listenter to reset textarea when unfocused and textarea is blank and resets counter to 0
+  textInput.addEventListener('focusout', () => {
+    if(textInput.value === "") {
+      textInput.style.color = "gray";
+      textInput.value = placeholder;
+      counter.style.visibility = "hidden";
+      //counter.innerHTML = "";
+    }
+  });
+
+}
+
 const betterSentences = string => {
 
   const checkboxes = document.querySelectorAll("input[type='checkbox']")
@@ -64,7 +109,7 @@ const count = value => {
     textOutput.innerHTML = "";
   }
 
-  if (value.length > counterMax - 1){
+  if (currentCount === counterMax){
     counter.style.color = "#f15b60";
   }
   else {
@@ -75,65 +120,14 @@ const count = value => {
 
 }
 
-const initiateInput = () => {
-  //initializes output and counter selector
-  const counter = document.querySelector('#counter');
-  const submitInput = document.querySelector('#submit-button');
-
-  if(textInput.value === placeholder) {
-    textInput.value= "";
-  }
-
-  submitInput.addEventListener('click', () => {
-    textOutput.innerHTML = betterSentences(textInput.value);
-  });
-
-  //processes input on key release and performs replacements and edits via betterSentences function
-  /*textInput.addEventListener('keyup', (event) => {
-    textOutput.innerHTML = betterSentences(textInput.value);
-  });*/
-
-  //adds listener to input and counts # of characters
-  textInput.addEventListener('input', () => {
-    count(textInput.value);
-  });
-
-  //adds listenter to reset textarea when unfocused and textarea is blank and resets counter to 0
-  textInput.addEventListener('focusout', () => {
-    if(textInput.value === "") {
-      textInput.style.color = "gray";
-      textInput.value = placeholder;
-      counter.style.visibility = "hidden";
-      //counter.innerHTML = "";
-    }
-  });
-
-
-
-}
-
-const textInput = document.querySelector('#text-input');
+initiateInput()
+/*const textInput = document.querySelector('#text-input');
 const textOutput = document.querySelector('#text-output');
+const submitInput = document.querySelector('#submit-button');
 let placeholder = textInput.getAttribute('data-placeholder');
-textInput.innerHTML = placeholder;
+textInput.innerHTML = placeholder;*/
 
-textInput.addEventListener('focusin', () => {
+/*textInput.addEventListener('focusin', () => {
   initiateInput()
   textInput.style.color = "black";
-});
-
-/*textInput.addEventListener('focusout', () => {
-  if(textInput.value === "") {
-    textInput.style.color = "gray";
-    textInput.value = "Try using verbs like utilize and optimize or even inserting the dreaded oxford comma.";
-    counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
-    counter.style.color = "white";
-    textOutput.innerHTML = "";
-  }
 });*/
-
-
-
-
-//let sentence = "Hello! I **just** wanted Leverage and Circle back and let you know that I will utilize, optimize, and leverage my Rocket Referrals account. Hello, I **just**wanted leverage and Circle back and let you know that I will utilize, optimize, and leverage my Rocket Referrals account."
-//console.log(betterSentences(sentence));

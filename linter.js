@@ -2,8 +2,8 @@ const initiateInput = () => {
   //initializes output and counter selector
   const textInput = document.querySelector('#text-input');
   const textOutput = document.querySelector('#text-output');
-  const submitInput = document.querySelector('#submit-button');
   const counter = document.querySelector('#counter');
+  const submitInput = document.querySelector('#submit-button');
   let placeholder = textInput.getAttribute('data-placeholder');
   textInput.innerHTML = placeholder;
 
@@ -17,11 +17,10 @@ const initiateInput = () => {
 
   });
 
-  count(textInput.value);
 
-
-  //textInput.addEventListener('input', () => {
-  //});
+  textInput.addEventListener('input', () => {
+    count(textInput.value);
+  });
 
   //const submitInput = document.querySelector('#submit-button');
 

@@ -21,14 +21,16 @@ const initiate = () => {
     count(textInput.value);
   });
 
-  if (textInput.value === placeholder){
-    return alert('Please type something first!')
-  }
-  else {
-    submitInput.addEventListener('click', () => {
+
+  submitInput.addEventListener('click', () => {
+    if (textInput.value === placeholder){
+      return alert('Please type something first!')
+    }
+    else {
       textOutput.innerHTML = betterSentences(textInput.value);
-    });
-  }
+    }
+  });
+
 
   //adds listenter to reset textarea when unfocused and textarea is blank and resets counter to 0
   textInput.addEventListener('focusout', () => {

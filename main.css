@@ -140,10 +140,33 @@ textarea {
   visibility: hidden;
   text-align: right;
   color: #177bc0;
-  margin: .25rem;
+  margin: .25rem .25rem .75rem .25rem;
   font-family: monospace;
   font-size: 1.5rem;
   font-weight: 500;
+}
+
+#submit-button {
+ width: 5rem;
+ height: 2.5rem;
+ border-radius: 30px;
+ border: none;
+ color: white;
+ background-color: #40bfbf;
+ outline: none;
+ box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+#submit-button:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 4.3px;
+}
+
+#submit-button:active {
+    background:  #40bfbfad;
+  /*-webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;*/
 }
 
 .settings-label {

@@ -19,7 +19,7 @@ const initiate = () => {
   textInput().addEventListener('focusin', () => {
     textInput().style.color = "black";
     counter.style.visibility = "visible";
-  }
+  });
 
   textInput().addEventListener('input', () => {
     count(textInput().value);

@@ -14,9 +14,9 @@ const initiateInput = () => {
       textInput.value= "";
     }
 
-    textInput.addEventListener('input', () => {
+    //textInput.addEventListener('input', () => {
       count(textInput.value);
-    });
+    //});
 
   });
 

@@ -24,7 +24,7 @@ const initiate = () => {
 
 
   textInput().addEventListener('input', () => {
-    count(textInput.value);
+    count(textInput().value);
   });
 
 
@@ -43,7 +43,7 @@ const initiate = () => {
 
 
   //adds listenter to reset textarea when unfocused and textarea is blank and resets counter to 0
-  textInput.addEventListener('focusout', () => {
+  textInput().addEventListener('focusout', () => {
     if(textInput().value === "") {
       textInput().style.color = "gray";
       textInput().value = placeholder;

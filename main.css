@@ -137,7 +137,7 @@ textarea {
 }
 
 #counter {
-  display:hidden;
+  visibility: hidden;
   text-align: right;
   color: #177bc0;
   margin: .25rem;

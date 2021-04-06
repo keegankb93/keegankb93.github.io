@@ -1,4 +1,4 @@
-const textInput = () {
+const textInput = () => {
   return document.querySelector('#text-input');
 }
 

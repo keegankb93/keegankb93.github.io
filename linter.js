@@ -27,6 +27,7 @@ const initiate = () => {
 
     if (textInput.value === placeholder){
       errorMessage.innerHTML = "Please type something first!"
+      errorMessage.style.visibility = "visible";
     }
     else {
       textOutput.innerHTML = betterSentences(textInput.value);

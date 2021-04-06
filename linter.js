@@ -1,4 +1,4 @@
-const initiateInput = () => {
+const initiate = () => {
   //initializes output and counter selector
   const textInput = document.querySelector('#text-input');
   const textOutput = document.querySelector('#text-output');
@@ -14,7 +14,6 @@ const initiateInput = () => {
     if(textInput.value === placeholder) {
       textInput.value= "";
     }
-
   });
 
 
@@ -22,25 +21,9 @@ const initiateInput = () => {
     count(textInput.value);
   });
 
-  //const submitInput = document.querySelector('#submit-button');
-
-  /*if(textInput.value === placeholder) {
-    textInput.value= "";
-  }*/
-
   submitInput.addEventListener('click', () => {
     textOutput.innerHTML = betterSentences(textInput.value);
   });
-
-  //processes input on key release and performs replacements and edits via betterSentences function
-  /*textInput.addEventListener('keyup', (event) => {
-    textOutput.innerHTML = betterSentences(textInput.value);
-  });*/
-
-  //adds listener to input and counts # of characters
-  /*textInput.addEventListener('input', () => {
-    count(textInput.value);
-  });*/
 
   //adds listenter to reset textarea when unfocused and textarea is blank and resets counter to 0
   textInput.addEventListener('focusout', () => {
@@ -49,7 +32,6 @@ const initiateInput = () => {
       textInput.value = placeholder;
       textOutput.innerHTML = "";
       counter.style.visibility = "hidden";
-      //counter.innerHTML = "";
     }
   });
 
@@ -126,14 +108,4 @@ const count = value => {
 
 }
 
-initiateInput()
-/*const textInput = document.querySelector('#text-input');
-const textOutput = document.querySelector('#text-output');
-const submitInput = document.querySelector('#submit-button');
-let placeholder = textInput.getAttribute('data-placeholder');
-textInput.innerHTML = placeholder;*/
-
-/*textInput.addEventListener('focusin', () => {
-  initiateInput()
-  textInput.style.color = "black";
-});*/
+initiate()

@@ -9,7 +9,7 @@ const initiate = () => {
   const textOutput = document.querySelector('#text-output');
   const counter = document.querySelector('#counter');
   const submitInput = document.querySelector('#submit-button');
-  let placeholder = textInput.getAttribute('data-placeholder');
+  let placeholder = textInput().getAttribute('data-placeholder');
 
   textInput().innerHTML = placeholder;
 

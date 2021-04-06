@@ -1,23 +1,29 @@
+const textInput = () {
+  return document.querySelector('#text-input');
+}
+
+
 const initiate = () => {
   //initializes output and counter selector
-  const textInput = document.querySelector('#text-input');
+  //const textInput = document.querySelector('#text-input');
   const textOutput = document.querySelector('#text-output');
   const counter = document.querySelector('#counter');
   const submitInput = document.querySelector('#submit-button');
   let placeholder = textInput.getAttribute('data-placeholder');
-  textInput.innerHTML = placeholder;
 
-  textInput.addEventListener('focusin', () => {
-    textInput.style.color = "black";
+  textInput().innerHTML = placeholder;
+
+  textInput().addEventListener('focusin', () => {
+    textInput().style.color = "black";
     counter.style.visibility = "visible";
 
-    if(textInput.value === placeholder) {
-      textInput.value= "";
+    if(textInput().value === placeholder) {
+      textInput().value= "";
     }
   });
 
 
-  textInput.addEventListener('input', () => {
+  textInput().addEventListener('input', () => {
     count(textInput.value);
   });
 
@@ -25,7 +31,7 @@ const initiate = () => {
   submitInput.addEventListener('click', () => {
     let errorMessage = document.querySelector('.submit-error-message');
 
-    if (textInput.value === placeholder){
+    if (textInput().value === placeholder){
       errorMessage.innerHTML = "Please type something first!"
       errorMessage.style.visibility = "visible";
     }
@@ -38,9 +44,9 @@ const initiate = () => {
 
   //adds listenter to reset textarea when unfocused and textarea is blank and resets counter to 0
   textInput.addEventListener('focusout', () => {
-    if(textInput.value === "") {
-      textInput.style.color = "gray";
-      textInput.value = placeholder;
+    if(textInput().value === "") {
+      textInput().style.color = "gray";
+      textInput().value = placeholder;
       textOutput.innerHTML = "";
       counter.style.visibility = "hidden";
     }
@@ -92,13 +98,6 @@ const punctReplace = string => {
                .replace(/!/g, '.');
               // .replace(/, and/, ' and')
 
-}
-
-
-const fullEdit = string => {
-  string = wordReplace(string);
-  string = punctReplace(string);
-  return string;
 }
 
 const count = value => {

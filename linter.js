@@ -1,27 +1,24 @@
+const linter = {
+}
+
 const textInput = () => {
   return document.querySelector('#text-input');
+}
+
+const eventListeners = event => {
+  let target = event.target;
 }
 
 
 const initiate = () => {
   //initializes output and counter selector
-  //const textInput = document.querySelector('#text-input');
   const textOutput = document.querySelector('#text-output');
   const counter = document.querySelector('#counter');
   const submitInput = document.querySelector('#submit-button');
-  let placeholder = textInput().getAttribute('data-placeholder');
-
-  textInput().innerHTML = placeholder;
 
   textInput().addEventListener('focusin', () => {
     textInput().style.color = "black";
     counter.style.visibility = "visible";
-
-    if(textInput().value === placeholder) {
-      textInput().value= "";
-    }
-  });
-
 
   textInput().addEventListener('input', () => {
     count(textInput().value);
@@ -31,7 +28,7 @@ const initiate = () => {
   submitInput.addEventListener('click', () => {
     let errorMessage = document.querySelector('.submit-error-message');
 
-    if (textInput().value === placeholder){
+    if (textInput().value === ""){
       errorMessage.innerHTML = "Please type something first!"
       errorMessage.style.visibility = "visible";
     }
@@ -46,7 +43,6 @@ const initiate = () => {
   textInput().addEventListener('focusout', () => {
     if(textInput().value === "") {
       textInput().style.color = "gray";
-      textInput().value = placeholder;
       textOutput.innerHTML = "";
       counter.style.visibility = "hidden";
     }

@@ -36,7 +36,7 @@ const initiate = () => {
       errorMessage.style.visibility = "visible";
     }
     else {
-      textOutput.innerHTML = betterSentences(textInput.value);
+      textOutput.innerHTML = betterSentences(textInput().value);
       errorMessage.style.visibility = "hidden";
     }
   });

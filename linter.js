@@ -57,7 +57,7 @@ const count = value => {
   let counterMax = textInput.getAttribute('maxlength');
   let currentCount = textInput.value.length;
 
-  counter.style.display = "block";
+  counter.style.visibility: "visible";
 
   if (currentCount === 0) {
     textOutput.innerHTML = "";
@@ -97,7 +97,7 @@ const initiateInput = () => {
     if(textInput.value === "") {
       textInput.style.color = "gray";
       textInput.value = placeholder;
-      //counter.style.visibility = "hidden";
+      counter.style.visibility = "hidden";
       //counter.innerHTML = "";
     }
   });

@@ -31,6 +31,7 @@ const initiate = () => {
     }
     else {
       textOutput.innerHTML = betterSentences(textInput.value);
+      errorMessage.style.visibility = "hidden";
     }
   });
 

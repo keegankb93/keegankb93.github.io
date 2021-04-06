@@ -45,6 +45,7 @@ const initiateInput = () => {
     if(textInput.value === "") {
       textInput.style.color = "gray";
       textInput.value = placeholder;
+      textOutput.innerHTML = "";
       counter.style.visibility = "hidden";
       //counter.innerHTML = "";
     }
@@ -113,10 +114,6 @@ const count = value => {
 
   //counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
   counter.style.visibility = "visible";
-
-  if (currentCount === 0) {
-    textOutput.innerHTML = "";
-  }
 
   if (currentCount === counterMax){
     counter.style.color = "#f15b60";

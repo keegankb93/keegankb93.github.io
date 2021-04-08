@@ -1,20 +1,60 @@
-const linter = {
+//object literal to store settings data + methods related to changing and checking setting values
+const settings = {
+  //default values are set to false since the default state is 'off' or 'unchecked'
+  _jargon: false,
+  _grammar: false,
+
+  get jargon() {
+    return this._jargon;
+  },
+  set jargon(value) {
+    this._jargon = value;
+  },
+  get grammar() {
+    return this._grammar;
+  },
+  set grammar(value) {
+    this._grammar = value;
+  },
+  //changes the values of the setting based on the 'change' event on the setting toggle.
+  changeSettings: function(event) {
+    console.log(event.target.id)
+    console.log(this.jargon)
+    if (event.target.id === "jargon-replace") {
+      if (event.target.checked) {
+        this.jargon = true;
+        console.log(this.jargon);
+      }
+      else {
+        this.jargon = false;
+      }
+    }
+
+    if (event.target.id === "grammar-replace") {
+      if (event.target.checked) {
+        return this.grammar = true;
+      }
+      else {
+        return this.grammar = false;
+      }
+    }
+   }
+
+
 }
 
 const textInput = () => {
   return document.querySelector('#text-input');
 }
 
-const eventListeners = event => {
-  let target = event.target;
-}
-
-
 const initiate = () => {
   //initializes output and counter selector
   const textOutput = document.querySelector('#text-output');
   const counter = document.querySelector('#counter');
   const submitInput = document.querySelector('#submit-button');
+
+  document.querySelectorAll('.switch-input[data-toggle="setting-toggle"]').forEach(toggle => {
+  toggle.addEventListener('change', settings.changeSettings.bind(settings))});
 
   textInput().addEventListener('focusin', () => {
     textInput().style.color = "black";
@@ -34,6 +74,7 @@ const initiate = () => {
       errorMessage.style.visibility = "visible";
     }
     else {
+      console.log(settings.jargon)
       textOutput.innerHTML = betterSentences(textInput().value);
       errorMessage.style.visibility = "hidden";
     }
@@ -53,24 +94,17 @@ const initiate = () => {
 
 const betterSentences = string => {
 
-  const checkboxes = document.querySelectorAll("input[type='checkbox']")
-
   let splitSentence = string.match(/([^\.!\?]+[\.!\?]+)|([^\.!\?]+$)/g);
 
-
-  if (splitSentence === null){
-    return "";
-  }
-
-  if (checkboxes[0].checked) {
+  if (settings.jargon) {
     splitSentence.forEach((sentence, i) => {
-        splitSentence[i] = wordReplace(sentence);
+        splitSentence[i] = jargonReplace(sentence);
       });
     }
 
-  if (checkboxes[1].checked) {
+  if (settings.grammar) {
     splitSentence.forEach((sentence, i) => {
-        splitSentence[i] = punctReplace(sentence);
+        splitSentence[i] = grammarReplace(sentence);
       });
     }
 
@@ -78,18 +112,18 @@ const betterSentences = string => {
 }
 
 
-const wordReplace = string => {
+const jargonReplace = string => {
    return string.replace(/\butilize/ig, 'use')
                 .replace(/\butilizing/ig, 'using')
                 .replace(/\boptimize/ig, 'improve')
-                .replace(/\boptimizing/ig, 'improving')
+            .replace(/\boptimizing/ig, 'improving')
                 .replace(/\bleverage/ig, 'take the opportunity')
                 .replace(/\bpivot/ig, 'change direction');
 
 
 }
 
-const punctReplace = string => {
+const grammarReplace = string => {
   return string.replace(/, and(?![^,]*^)/g, ' and')
                .replace(/, or(?![^,]*^)/g, ' or')
                .replace(/!/g, '.');

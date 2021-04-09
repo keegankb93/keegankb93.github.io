@@ -18,29 +18,18 @@ const settings = {
   },
   //changes the values of the setting based on the 'change' event on the setting toggle.
   changeSettings: function(event) {
-    console.log(event.target.id)
-    console.log(this.jargon)
-    if (event.target.id === "jargon-replace") {
-      if (event.target.checked) {
-        this.jargon = true;
-        console.log(this.jargon);
-      }
-      else {
-        this.jargon = false;
-      }
-    }
 
-    if (event.target.id === "grammar-replace") {
-      if (event.target.checked) {
-        return this.grammar = true;
+    Object.keys(this).forEach(setting => {
+      if (event.target.getAttribute("data-setting") === setting){
+        if (event.target.checked) {
+          this[setting] = true;
+        }
+        else {
+          this[setting] = false;
+        }
       }
-      else {
-        return this.grammar = false;
-      }
-    }
-   }
-
-
+    });
+  }
 }
 
 const textInput = () => {

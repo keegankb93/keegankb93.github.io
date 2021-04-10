@@ -22,18 +22,39 @@ const settings = {
     Object.keys(this).forEach(setting => {
       if (event.target.getAttribute("data-setting") === setting){
         if (event.target.checked) {
-          this[setting] = true;
+          return this[setting] = true;
         }
         else {
-          this[setting] = false;
+          return this[setting] = false;
         }
       }
     });
+  },
+
+  executeSettings: function(sentences) {
+
+   if (this.jargon) {
+    sentences.forEach((sentence, i) => {
+        sentences[i] = jargonReplace(sentence);
+      });
+    }
+
+  if (this.grammar) {
+    sentences.forEach((sentence, i) => {
+        sentences[i] = grammarReplace(sentence);
+      });
+    }
   }
 }
 
+
 const textInput = () => {
   return document.querySelector('#text-input');
+}
+
+const editor = {
+  input: "",
+
 }
 
 const initiate = () => {
@@ -42,6 +63,7 @@ const initiate = () => {
   const counter = document.querySelector('#counter');
   const submitInput = document.querySelector('#submit-button');
 
+  editor.input = textInput().value
   document.querySelectorAll('.switch-input[data-toggle="setting-toggle"]').forEach(toggle => {
   toggle.addEventListener('change', settings.changeSettings.bind(settings))});
 
@@ -63,7 +85,6 @@ const initiate = () => {
       errorMessage.style.visibility = "visible";
     }
     else {
-      console.log(settings.jargon)
       textOutput.innerHTML = betterSentences(textInput().value);
       errorMessage.style.visibility = "hidden";
     }
@@ -81,23 +102,17 @@ const initiate = () => {
 
 }
 
+//Since I don't really need to share this across multiple objects, there isn't really a use to make a class here.
+/*String.prototype.createSentences = function () {
+  return this.match(/([^\.!\?]+[\.!\?]+)|([^\.!\?]+$)/g);
+}*/
+
 const betterSentences = string => {
 
-  let splitSentence = string.match(/([^\.!\?]+[\.!\?]+)|([^\.!\?]+$)/g);
+  let newParagraph = string.match(/([^\.!\?]+[\.!\?]+)|([^\.!\?]+$)/g);
+  settings.executeSettings(newParagraph);
+  return newParagraph.join('');
 
-  if (settings.jargon) {
-    splitSentence.forEach((sentence, i) => {
-        splitSentence[i] = jargonReplace(sentence);
-      });
-    }
-
-  if (settings.grammar) {
-    splitSentence.forEach((sentence, i) => {
-        splitSentence[i] = grammarReplace(sentence);
-      });
-    }
-
-  return splitSentence.join('');
 }
 
 
@@ -105,7 +120,7 @@ const jargonReplace = string => {
    return string.replace(/\butilize/ig, 'use')
                 .replace(/\butilizing/ig, 'using')
                 .replace(/\boptimize/ig, 'improve')
-            .replace(/\boptimizing/ig, 'improving')
+                .replace(/\boptimizing/ig, 'improving')
                 .replace(/\bleverage/ig, 'take the opportunity')
                 .replace(/\bpivot/ig, 'change direction');
 
@@ -121,12 +136,9 @@ const grammarReplace = string => {
 }
 
 const count = value => {
-
-
   let counterMax = document.querySelector('#text-input').getAttribute('maxlength');
   let currentCount = value.length;
 
-  //counter.innerHTML = '0/'+textInput.getAttribute('maxlength');
   if (currentCount === counterMax){
     counter.style.color = "#f15b60";
   }

@@ -76,7 +76,7 @@ const editor = {
     let counterMax = this.input.getAttribute('maxlength');
     let currentCount = value.length;
 
-    if (currentCount === counterMax){
+    if (currentCount > counterMax - 1){
       this.counter.style.color = "#f15b60";
     }
     else {

@@ -125,6 +125,11 @@ header {
   outline: none;
 }
 
+.button:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 4.3px;
+}
+
 #submit-button {
   max-height: 3.5rem;
   height: 3.5rem;
@@ -157,13 +162,19 @@ header {
 }
 
 #back-button {
-  visibility: hidden;
   background-color: #40c0c0;
 }
 
+#back-button:hover {
+  background-color: rgba(64,192,192,.8);
+}
+
 #reset-button {
-  visibility: hidden;
   background-color: #f15b60;
+}
+
+#reset-button:hover {
+  background-color: rgba(241,91,96,.8);
 }
 
 .setting-row {
@@ -249,14 +260,29 @@ body::-webkit-scrollbar-track {
 
 .hidden {
   overflow: hidden;
-  /*animation: slide 1s ease 1s forwards;*/
+  opacity: 0;
+  /*transition:visibility 0s linear 0s, opacity 600ms;
+  transition: visibility 0s linear 600ms, opacity 300ms;*/
 }
 
 .hide-me {
-  transition: visibility 1s ease-out 3s, opacity 1s;
+    /*transition: visibility 0s linear 600ms, opacity 600ms;
+  transition:visibility 0s linear 0s, opacity 600ms;*/
+
 }
 
-@keyframes fadeIn {
+@-webkit-keyframes fadeIn {
    0% {opacity:0;}
   100% {opacity:1;}
+}
+
+.m-fadeOut {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
+}
+.m-fadeIn {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
 }

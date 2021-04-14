@@ -124,6 +124,7 @@ const linter = {
       this.visibility(event.currentTarget.id);
       this.input.value = "";
       this.output.innerHTML = "";
+      this.counter.innerHTML = "";
     }
 
    },

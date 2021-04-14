@@ -152,8 +152,8 @@ const linter = {
    //this function/method controls the visibility of the elements. It's its own function (instead of a callback function within the above button handler) due to multiple buttons requiring use of manipuluating the visibility.
    visibility: function(id){
      if (id === "submit-button"){
-       document.querySelector('.settings-column').classList.toggle('m-fadeIn');
-       document.querySelector('.settings-column').classList.remove('m-fadeOut');
+       document.querySelector('.settings-column').classList.remove('m-fadeIn');
+       document.querySelector('.settings-column').classList.toggle('m-fadeOut');
        document.querySelectorAll('.hide-me').forEach(element => {
           element.classList.toggle('m-fadeOut');
           element.classList.remove('m-fadeIn');

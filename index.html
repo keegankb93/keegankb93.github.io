@@ -11,75 +11,77 @@
     <script src="https://kit.fontawesome.com/1c84f0ec21.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <h1>Rewritten</h1>
-      </header>
-      <div class="row">
-        <div class="column hidden align-items-center">
-          <div id="text-output" class="output"></div>
-        </div>
+  <div class="container">
+    <header>
+      <h1>Rewritten</h1>
+    </header>
+    <div class="row">
+      <div class="column hidden align-items-center">
+        <div id="text-output" class="output"></div>
       </div>
-      <div class="row">
-        <div class="column hidden">
-          <button id="back-button" class="button" type="button" data-button="editor-button" data-button-type="back"><i class="fas fa-undo fa-2x"></i></button>
-          <button id="reset-button" class="button" type="button" data-button="editor-button" data-button-type="reset"><i class="fas fa-sync-alt fa-2x"></i></button>
-        </div>
+    </div>
+    <div class="row">
+      <div class="column hidden">
+        <button id="back-button" class="button" type="button" data-button="editor-button" data-button-type="back"><i class="fas fa-undo fa-2x"></i></button>
+        <button id="reset-button" class="button" type="button" data-button="editor-button" data-button-type="reset"><i class="fas fa-sync-alt fa-2x"></i></button>
       </div>
-      <div class="row">
-        <div class="column text-align-center">
-          <div class="submit-error-message"></div>
-        </div>
+    </div>
+    <div class="row">
+      <div class="column text-align-center">
+        <div class="submit-error-message"></div>
       </div>
-      <div class="row no-wrap-row">
-        <div class="column input-editor-column hide-me">
-                <button id="settings-cog-button" class="button hide-me" data-button="editor-button" data-button-type="settings-cog"><i class="fas fa-cog fa-4x"></i></button>
-          <textarea id="text-input" maxlength="600" placeholder="Go ahead and type something cool!" class="textarea-input"></textarea>
-          <button id="submit-button" type="button" class="button" data-button="editor-button"><i class="fas fa-arrow-up fa-2x"></i></button>
-        </div>
+    </div>
+    <div class="row no-wrap-row">
+      <div class="column input-editor-column hide-me">
+              <button id="settings-cog-button" class="button hide-me" data-button="editor-button" data-button-type="settings-cog"><i class="fas fa-cog fa-4x"></i></button>
+        <textarea id="text-input" maxlength="600" placeholder="Go ahead and type something cool!" class="textarea-input"></textarea>
+        <button id="submit-button" type="button" class="button" data-button="editor-button"><i class="fas fa-arrow-up fa-2x"></i></button>
       </div>
-      <div class="row hide-me">
-        <div class="column justify-content-row-center">
-          <div id="counter"></div>
-        </div>
+    </div>
+    <div class="row hide-me">
+      <div class="column justify-content-row-center">
+        <div id="counter"></div>
       </div>
-      <div class="row">
-        <div class="column settings-column">
-          <div class="row no-wrap-row setting-row row-width-100">
-            <div class="column align-items-center no-flex-basis">
-              <span class="setting-label">Jargon</span>
-              <div class="switch">
-                <input id="jargon-replace" type="checkbox" data-toggle="setting-toggle" data-setting="jargon" class="switch-input"></input>
-                <label for="jargon-replace" class="switch-label"></label>
-              </div>
+    </div>
+    <div class="settings-container">
+    <div class="row">
+      <div class="column settings-column">
+        <div class="row no-wrap-row setting-row">
+          <div class="column align-items-center no-flex-basis">
+            <span class="setting-label">Jargon</span>
+            <div class="switch">
+              <input id="jargon-replace" type="checkbox" data-toggle="setting-toggle" data-setting="jargon" class="switch-input"></input>
+              <label for="jargon-replace" class="switch-label"></label>
             </div>
-            <div class="column align-items-center no-flex-basis">
-              <span class="setting-label">Grammar</span>
-                <div class="switch">
-                  <input id="grammar-replace" type="checkbox" data-toggle="setting-toggle" data-setting="grammar" class="switch-input"></input>
-                  <label for="grammar-replace" class="switch-label"></label>
-                </div>
-              </div>
-              <div style="align-items: center; justify-content: flex-end;" class="column">
-                <button id="reset-button-settings" class="button" type="button" data-button="editor-button" data-button-type="reset"><i class="fas fa-sync-alt fa-2x"></i></button>
-              </div>
           </div>
-          <div class="row no-wrap-row row-width-100 row-border-white">
-            <div class="column flex-60">
-              <div class="remove-replace-input-container">
-                <input id="remove-word" class="remove-replace-input" type="input" placeholder="Word or phrase (exact) to remove" data-setting="removeWord"></input>
-                <input id="replace-word" class="remove-replace-input" type="input" placeholder="Word or phrase (exact) to remove" data-setting="replaceWord"></input>
-            <button id="replace-button" type="button" class="button" data-button="editor-button" data-button-type="settings-button"><i class="fas fa-plus"></i></button>
+          <div class="column align-items-center no-flex-basis">
+            <span class="setting-label">Grammar</span>
+              <div class="switch">
+                <input id="grammar-replace" type="checkbox" data-toggle="setting-toggle" data-setting="grammar" class="switch-input"></input>
+                <label for="grammar-replace" class="switch-label"></label>
               </div>
             </div>
-            <div class="column flex-40 col-height">
-              <div class="remove-replace-results">
-                <ul id="replace-submission-container"></ul>
-              </div>
+            <div class="column justify-content-flex-end align-items-center">
+              <button id="reset-button-settings" class="button" type="button" data-button="editor-button" data-button-type="reset"><i class="fas fa-sync-alt fa-2x"></i></button>
+            </div>
+        </div>
+        <div class="row row-width-100 row-border-white">
+          <div class="column">
+            <div class="remove-replace-input-container">
+              <input id="remove-word" class="remove-replace-input" type="input" placeholder="Word or phrase (exact) to remove" data-setting="removeWord" maxlength="23"></input>
+              <input id="replace-word" class="remove-replace-input" type="input" placeholder="Word or phrase (exact) to replace" data-setting="replaceWord" maxlength="23"></input>
+          <button id="replace-button" type="button" class="button" data-button="editor-button" data-button-type="settings-button"><i class="fas fa-plus"></i></button>
+            </div>
+          </div>
+          <div style="flex-direction: row;" class="column">
+            <div class="remove-replace-results">
+              <div id="replace-submission-container"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+  </div>
+</body>
 </html>

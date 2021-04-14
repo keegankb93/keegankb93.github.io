@@ -28,8 +28,16 @@ header {
   width: 100%;
 }
 
-.justify-content-row-center {
+.row-border-white {
+  border: 2px solid white;
+}
+
+.justify-content-center {
   justify-content: center;
+}
+
+.justify-content-flex-end {
+  justify-content: flex-end;
 }
 
 .column {
@@ -143,7 +151,7 @@ header {
 #submit-button {
   max-height: 3.5rem;
   height: 3.5rem;
-  width: 3.75rem;
+  width: 4rem;
   margin: 0;
   border-radius: 50%;
   border: none;
@@ -206,7 +214,9 @@ header {
 #settings-cog-button:hover {
  color: #095283;
 }
-
+.settings-container {
+  width: 300px;
+}
 .setting-row {
   background-color: white;
   color: black;
@@ -219,7 +229,6 @@ header {
 .setting-label {
   margin-right: .75rem;
   font-size: 1rem;
-
 }
 
 .switch {
@@ -285,7 +294,7 @@ header {
 }
 
 .remove-replace-input-container {
-  width: 100%;
+  margin-top: .5rem;
 }
 
 .remove-replace-input {
@@ -303,16 +312,16 @@ header {
   align-items: center;
 }
 
+.align-items-start {
+  align-items: start;
+}
+
 .flex-40 {
   flex-basis: 60%;
 }
 
 .row-border-white {
   border: 3px solid white;
-}
-
-.col-height {
-  300px;
 }
 
 #replace-button {
@@ -328,11 +337,46 @@ header {
   background-color: rgba(64,192,192,.85);
 }
 
+.remove-replace-results {
+  width: 100%;
+}
+
 #replace-submission-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
   overflow-y: scroll;
-  height: 100px;
   list-style-type: none;
-  font-size: 1.25rem;
+  font-size: .75rem;
+  height: 150px;
+  padding: 0;
+
+}
+
+#replace-submission-container div {
+  margin: .75rem .5rem .25rem .5rem;
+
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.remove-mark {
+  border-radius: .6rem;
+  background-color: #f15b60;
+  color: white;
+  padding: .15rem .35rem;
+  margin-right: .25rem;
+}
+
+.replace-mark {
+  border-radius: .6rem;
+  background-color: #40c0c0;
+  color: white;
+  padding: .15rem .35rem;
+  margin-left: .25rem;
 }
 
 #replace-submission-container::-webkit-scrollbar {
@@ -366,7 +410,6 @@ body::-webkit-scrollbar-track {
 }
 
 .hide-me {
-
 }
 
 .settings-hide {
@@ -382,4 +425,5 @@ body::-webkit-scrollbar-track {
   visibility: visible;
   opacity: 1;
   transition: visibility 0s linear 0s, opacity 300ms;
+
 }

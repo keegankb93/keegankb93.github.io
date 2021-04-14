@@ -152,8 +152,8 @@ const linter = {
    //this function/method controls the visibility of the elements. It's its own function (instead of a callback function within the above button handler) due to multiple buttons requiring use of manipuluating the visibility.
    visibility: function(id){
      if (id === "submit-button"){
-       document.querySelector('.settings-column').classList.toggle('m-fadeOut');
-       document.querySelector('.settings-column').classList.remove('m-fadeIn');
+       document.querySelector('.settings-column').classList.toggle('m-fadeIn');
+       document.querySelector('.settings-column').classList.remove('m-fadeOut');
        document.querySelectorAll('.hide-me').forEach(element => {
           element.classList.toggle('m-fadeOut');
           element.classList.remove('m-fadeIn');
@@ -185,10 +185,10 @@ const linter = {
   return this.match(/([^\.!\?]+[\.!\?]+)|([^\.!\?]+$)/g);
 }*/
 const userWordRemoveInput = function() {
-  const removeWordDiv = document.createElement("li");
+  const removeWordDiv = document.createElement("div");
   const wordToRemove = document.querySelector('#remove-word').value;
   const wordToReplace = document.querySelector('#replace-word').value;
-  removeWordDiv.innerHTML = wordToRemove+` <i class="fas fa-rocket"></i> `+wordToReplace;
+  removeWordDiv.innerHTML = `<mark class="remove-mark">${wordToRemove}</mark>`+`<i class="fas fa-rocket"></i>`+`<mark class="replace-mark">${wordToReplace}</mark>`;
   document.body.appendChild(removeWordDiv);
   linter.settings.removeWord.push(document.querySelector('#remove-word').value);
   linter.settings.replaceWord.push(document.querySelector('#replace-word').value);

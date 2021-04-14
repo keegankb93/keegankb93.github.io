@@ -3,112 +3,58 @@
 }
 
 body {
-  margin: 0;
-  background-color: #177bc0;
-  color: #177bc0;
+  background: rgb(23,123,192);
+  background: radial-gradient(circle, rgba(23,123,192,1) 40%, rgba(9,82,131,1) 100%);
+  font-family: Arial;
+  color: white;
 }
 
-textarea {
-  display:block;
-  width: 100%;
-  height: 13rem;
-  resize: none;
-  outline: none;
-  border-radius: 25px;
-  padding: 1rem;
-  margin: auto;
-  border: 2px dashed #177bc0;
-  color: gray;
+header {
+  margin-bottom: 5rem;
 }
 
-.main-container {
-  width: 1200px;
+.container{
+  width: 800px;
   margin: 0 auto;
-  padding: 1.5rem;
-  /*box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;*/
-  /*border: 1px solid black;*/
 }
 
-@media screen and (max-width: 780px) {
-  .main-container {
-    width: 480px;
-  }
-}
-
-.text-center {
-  text-align: center;
-}
-
-.align-center {
-  align-items: center;
-}
-
-.col {
-  background-color: white;
-  margin: 1rem;
-  border-radius: 25px;
-  padding: 1.5rem;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-}
-
-.col-dflex-justbetween {
-  display: flex;
-  justify-content: space-between;
-}
-
-.flex50 {
-  flex-basis: 50%;
-}
-
-.flex30 {
-  flex-basis: 30%;
-}
-
-.flex20 {
-  flex-basis: 20%;
-}
-
-.noflexwrap {
-  flex-wrap: nowrap;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.direction-column {
-  flex-direction: column;
-}
-
-.rowwrap {
+.row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.rownowrap {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+.justify-content-row-center {
+  justify-content: center;
 }
 
 .column {
+  display: flex;
   flex-basis: 100%;
 }
 
-.header {
-  display: fixed;
-  height: 6rem;
-  margin-bottom: 2rem;
-  background-color: #095283;
-  color: white;
-  font-family: monospace;
-  font-size: 2rem;
-  /*border-bottom: 1px solid #177bc0;*/
+.col-80{
+  flex-basis: 95%
 }
 
-.header h1 {
-  margin: 1rem;
+.col-20 {
+  flex-basis: 20%;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.no-flex-basis {
+  flex-basis: 0%;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.no-wrap-row {
+  flex-wrap: nowrap;
 }
 
 /*@media screen and (min-width: 800px) {
@@ -117,75 +63,129 @@ textarea {
   }
 }*/
 
+.section-titles {
+  color: white;
+  font-size: 2rem;
+}
 
 .output {
-  margin: 0 0 3rem 0;
-  padding: .5rem;
-  font-family: monospace;
-  font-size: 1.5rem;
-  color: white;
-  width: 100%;
-  height: 16rem;
-  overflow-y: hidden;
-  background-color: #363535;
-}
-
-@media screen and (max-width: 780px) {
-  .output {
-    overflow-y: scroll;
-  }
-}
-
-#counter {
-  visibility: hidden;
-  text-align: right;
-  color: #177bc0;
-  margin: .25rem .25rem .75rem .25rem;
-  height: 1.5rem;
-  font-family: monospace;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 2rem;
 }
 
 .submit-error-message {
   visibility: hidden;
+  height: 1rem;
+  width: 100%;
+  text-align: center;
+  margin: 5rem 0 .5rem 0;
   color: #f15b60;
-  font-family: monospace;
-  margin-bottom: .5rem;
+  font-weight: 700;
+
+}
+
+.input-editor-column {
+  /*margin-top: 5rem;*/
+}
+
+.textarea-input {
+  width: 100%;
+  height: 3.75rem;
+  border-radius: 25px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  /*box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;*/
+  border: none;
+  outline: none;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-family: Helvetica;
+  resize: none;
+  /*overflow-y: hidden;*/
+  border: 0px solid black;
+  transition: box-shadow .25s;
+  tranistion: border-width 0.3s linear;
+  transition: height .75s;
+  transition-delay: 200ms;
+
+}
+
+.textarea-input:focus-within {
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 7px 29px 0px;
+  display: absolute;
+  height: 300px;
+}
+
+.button {
+  height: 3.75rem;
+  width: 3.75rem;
+  border-radius: 50%;
+  border: none;
+  margin: 1rem .25rem .25rem .25rem;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  outline: none;
 }
 
 #submit-button {
- width: 5rem;
- height: 2.5rem;
- border-radius: 30px;
- border: none;
- color: white;
- background-color: #40bfbf;
- outline: none;
- box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  max-height: 3.5rem;
+  height: 3.5rem;
+  width: 3.75rem;
+  margin: 0 0 0 .5rem;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  background-color: #095283;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 #submit-button:hover {
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 4.3px;
+  background-color: rgba(64,192,192,.85);
 }
 
 #submit-button:active {
-    background:  #40bfbfad;
-  /*-webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-          box-shadow: inset 0px 0px 5px #c1c1c1;*/
+  background-color: rgba(255,255,255,.6);
 }
 
-.settings-label {
-  font-family: monospace;
+#counter {
+  visibility: hidden;
+  color: white;
+  margin: .25rem .25rem .75rem .25rem;
+  height: 1.5rem;
+  font-weight: 500;
+}
+
+#back-button {
+  visibility: hidden;
+  background-color: #40c0c0;
+}
+
+#reset-button {
+  visibility: hidden;
+  background-color: #f15b60;
+}
+
+.setting-row {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.setting-label {
+  margin-right: .75rem;
+  font-size: 1rem;
+
 }
 
 .switch {
   position: relative;
   display: inline-block;
-  margin-bottom: 2rem;
+  margin-right: 2.5rem;
 }
+
 .switch-input {
   display: none;
 }
@@ -229,4 +229,34 @@ textarea {
 }
 .switch-input:checked + .switch-label::after {
   left: 24px;
+}
+
+textarea::-webkit-scrollbar {
+    width: 0;
+}
+
+textarea::-webkit-scrollbar-track {
+    background-color: rgba(0,0,0,0);
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: rgba(0,0,0,0);
+}
+
+.hidden {
+  overflow: hidden;
+  /*animation: slide 1s ease 1s forwards;*/
+}
+
+.hide-me {
+  transition: visibility 1s ease-out 3s, opacity 1s;
+}
+
+@keyframes fadeIn {
+   0% {opacity:0;}
+  100% {opacity:1;}
 }

@@ -10,20 +10,27 @@
     <script src="./linter.js" defer></script>
     <script src="https://kit.fontawesome.com/1c84f0ec21.js" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <head>
+<script src="https://kit.fontawesome.com/1c84f0ec21.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
   <div class="container">
     <header>
-      <h1>Rewritten</h1>
+      <h1></h1>
     </header>
     <div class="row">
       <div class="column hidden align-items-center">
         <div id="text-output" class="output"></div>
       </div>
     </div>
-    <div class="row">
+    <div class="row no-wrap-row">
       <div class="column hidden">
         <button id="back-button" class="button" type="button" data-button="editor-button" data-button-type="back"><i class="fas fa-undo fa-2x"></i></button>
         <button id="reset-button" class="button" type="button" data-button="editor-button" data-button-type="reset"><i class="fas fa-sync-alt fa-2x"></i></button>
+      </div>
+      <div class="column hidden justify-content-flex-end">
+        <button id="copy-button" class="button" type="button" data-button="editor-button" data-button-type="copy"><i class="far fa-copy fa-2x"></i></i></button>
       </div>
     </div>
     <div class="row">
@@ -65,11 +72,12 @@
                 <button id="reset-button-settings" class="button" type="button" data-button="editor-button" data-button-type="reset"><i class="fas fa-sync-alt fa-2x"></i></button>
               </div>
           </div>
-          <div class="row row-width-100 row-border-white">
+          <div class="row row-width-100 row-background-white">
             <div class="column col-85">
               <div class="remove-replace-input-container">
-                <input id="remove-word" class="remove-replace-input" type="input" placeholder="Word or phrase (exact) to remove" data-setting="removeWord" maxlength="23"></input>
-                <input id="replace-word" class="remove-replace-input" type="input" placeholder="Word or phrase (exact) to replace" data-setting="replaceWord" maxlength="23"></input>
+
+                <input id="remove-word" class="remove-replace-input" type="input" placeholder="Word or phrase (exact) to remove" data-setting-type="setting-input" data-setting="removeWord" maxlength="23"></input>
+                <input id="replace-word" class="remove-replace-input" type="input" placeholder="Word or phrase (exact) to replace" data-setting-type="setting-input" data-setting="replaceWord" maxlength="23"></input>
               </div>
             </div>
             <div class="column no-flex-basis align-items-end justify-content-flex-end">

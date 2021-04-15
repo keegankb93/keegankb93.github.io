@@ -99,12 +99,13 @@ const linter = {
   },
   //function that creates a div element with the user's input of a 'remove value' and a 'replace value'. The values are passed through "sanitization" to prevent any injections (not that anyone would do that on my app haha!) the created element is appended to the div it needs to be housed in which in this case is in the settings container. I push the values to parallel arrays that will be used to replace them when the user submits.
   userWordRemoveInput: function() {
-    const removeWordDiv = document.createElement("div");
+    const removeWords = document.querySelector('#replace-submission-container');
+    const removeWordChildDiv = document.createElement("div");
     const wordToRemove = sanitizeHTML(document.querySelector('#remove-word').value);
     const wordToReplace = sanitizeHTML(document.querySelector('#replace-word').value);
-    removeWordDiv.innerHTML = `<mark class="remove-mark">${wordToRemove}</mark>`+`<i class="fas fa-rocket"></i>`+`<mark class="replace-mark">${wordToReplace}</mark>`;
-    document.body.appendChild(removeWordDiv);
-    removeWords.appendChild(removeWordDiv);
+    removeWordChildDiv.innerHTML = `<mark class="remove-mark">${wordToRemove}</mark>`+`<i class="fas fa-rocket"></i>`+`<mark class="replace-mark">${wordToReplace}</mark>`;
+    document.body.appendChild(removeWordChildDiv);
+    removeWords.appendChild(removeWordChildDiv);
 
     this.removeWord.push(document.querySelector('#remove-word').value);
     this.replaceWord.push(document.querySelector('#replace-word').value);
@@ -258,11 +259,10 @@ const sanitizeHTML = function (str) {
 };
 
 //A few listeners need to be ran through. Wait until page is loaded to execute.
-window.onload = function() {
+window.addEventListener('DOMContentLoaded', () => {
   document.querySelector('#text-input').addEventListener('focusin', linter.editor.focusInit.bind(linter.editor))
   document.querySelectorAll('.switch-input[data-toggle="setting-toggle"]').forEach(toggle => {
     toggle.addEventListener('change', linter.settings.changeSettings.bind(linter.settings))});
   document.querySelectorAll('.button[data-button="editor-button"]').forEach(button => {
     button.addEventListener('click', linter.editor.editorButtons.bind(linter.editor))});
-  const removeWords = document.querySelector('#replace-submission-container');
-}
+});

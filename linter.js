@@ -39,7 +39,7 @@ const linter = {
     for (let i = 0; i < this.removeWord.length; i++){
       const regexRemove = new RegExp(`(\\b${this.removeWord[i]}\\b)`, `ig`);
       string = string.replace(regexRemove, this.replaceWord[i]);
-    }//([\bcool\b]+[\.!\?]+)|([^\.!\?]+$)
+    }
     return string;
   },
   //executes all settings based on what the user selects.

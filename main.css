@@ -120,7 +120,6 @@ header {
   resize: none;
   border: 0px solid black;
   transition: box-shadow .25s;
-  tranistion: border-width 0.3s linear;
   transition: height .75s;
   transition-delay: 200ms;
   margin: 0 .5rem;
@@ -151,14 +150,17 @@ header {
 
 #back-button {
   background-color: #40c0c0;
+  transition: background-color 0.25s ease;
 }
 
 #back-button:hover {
   background-color: rgba(64,192,192,.8);
+  transition: background-color 0.25s ease;
 }
 
 #reset-button {
   background-color: #f15b60;
+  transition: background-color 0.25s ease;
 }
 
 #reset-button:hover {
@@ -167,6 +169,7 @@ header {
 
 #copy-button {
   background-color: #095283;
+  transition: background-color 0.25s ease;
 }
 
 #submit-button {
@@ -180,6 +183,7 @@ header {
   background-color: #095283;
   outline: none;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transition: background-color 0.25s ease
 }
 
 #submit-button:hover,#copy-button:hover {
@@ -210,6 +214,7 @@ header {
   outline: none;
   border: none;
   box-shadow: none;
+  transition: background-color 0.25s ease;
   margin: 0;
 }
 

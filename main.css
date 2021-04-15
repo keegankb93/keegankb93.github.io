@@ -208,6 +208,7 @@ header {
 .settings-column {
   flex-wrap: wrap;
   opacity: 0;
+  pointer-events: none;
 }
 
 #settings-cog-button {
@@ -423,6 +424,7 @@ body::-webkit-scrollbar-track {
 .hidden {
   overflow: hidden;
   opacity: 0;
+  pointer-events: none;
 }
 
 .hide-me {
@@ -441,5 +443,6 @@ body::-webkit-scrollbar-track {
   visibility: visible;
   opacity: 1;
   transition: visibility 0s linear 0s, opacity 300ms;
+  pointer-events: auto;
 
 }

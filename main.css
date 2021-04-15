@@ -146,6 +146,7 @@ header {
 .button:hover {
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 4.3px;
+  transition: box-shadow 0.25s ease;
 }
 
 #back-button {
@@ -214,7 +215,7 @@ header {
   outline: none;
   border: none;
   box-shadow: none;
-  transition: background-color 0.25s ease;
+  transition: color 0.25s ease;
   margin: 0;
 }
 

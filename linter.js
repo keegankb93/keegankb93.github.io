@@ -37,9 +37,9 @@ const linter = {
   //Takes two values from stored arrays in the settings obj. User inputs a remove and replace value. Then with a RegExp object we look for the word and replace it.
   userRemoveReplace: function(string) {
     for (let i = 0; i < this.removeWord.length; i++){
-      const regexRemove = new RegExp(`\\b${this.removeWord[i]}\\b`, `ig`);
+      const regexRemove = new RegExp(`(\\b${this.removeWord[i]}\\b)`, `ig`);
       string = string.replace(regexRemove, this.replaceWord[i]);
-    }
+    }//([\bcool\b]+[\.!\?]+)|([^\.!\?]+$)
     return string;
   },
   //executes all settings based on what the user selects.
